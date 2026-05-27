@@ -1,47 +1,49 @@
 export const certificates = [
   {
     id: 1,
-    title: 'Web Development Certificate',
+    title: 'E-Sertifikat - Muhamad Mulyana Julpiansyah',
     description:
-      'Comprehensive training in modern web development, HTML, CSS, responsive design, and full-stack fundamentals.',
+      'Sertifikat resmi atas nama Muhamad Mulyana Julpiansyah.',
     image:
-      'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80&auto=format&fit=crop',
+      '/assets/certificates/E-Sertifikat - Muhamad Mulyana Julpiansyah.pdf',
+
     url: '#',
   },
   {
     id: 2,
-    title: 'UI/UX Design Certificate',
+    title: 'Sertifikat Belajar AI',
     description:
-      'Focused on user-centered design, wireframing, prototyping, and creating intuitive digital experiences.',
+      'Sertifikat pelatihan dan pembelajaran Artificial Intelligence (AI).',
     image:
-      'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80&auto=format&fit=crop',
+      '/assets/certificates/sertfikat belajar ai.pdf',
     url: '#',
   },
+
   {
     id: 3,
-    title: 'Laravel Certificate',
+    title: 'Sertifikat Dasar Pemrograman JavaScript',
     description:
-      'Backend development with Laravel framework, MVC architecture, routing, and RESTful API implementation.',
+      'Sertifikat penyelesaian kelas dasar pemrograman JavaScript.',
     image:
-      'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80&auto=format&fit=crop',
+      '/assets/certificates/sertifikat dasar pemrograman javascript.pdf',
     url: '#',
   },
   {
     id: 4,
-    title: 'JavaScript Certificate',
+    title: 'Sertifikat Dasar Pemrograman Web',
     description:
-      'Advanced JavaScript concepts including ES6+, async programming, DOM manipulation, and modern patterns.',
+      'Sertifikat penyelesaian kelas dasar pemrograman web.',
     image:
-      'https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?w=800&q=80&auto=format&fit=crop',
+      '/assets/certificates/sertifikat dasar pemrograman web.pdf',
     url: '#',
   },
   {
     id: 5,
-    title: 'Database & SQL Certificate',
+    title: 'Sertifikat E-Learning K3 Muhamad Muyana Julpiansyah',
     description:
-      'Database design, SQL queries, normalization, indexing, and data management best practices.',
+      'Sertifikat pelatihan E-Learning K3 atas nama Muhamad Muyana Julpiansyah.',
     image:
-      'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&q=80&auto=format&fit=crop',
+      '/assets/certificates/Sertifikat E-Learning K3 Muhamad Muyana Julpiansyah.pdf',
     url: '#',
   },
 ];
