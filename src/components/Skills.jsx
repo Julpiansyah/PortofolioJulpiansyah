@@ -62,11 +62,6 @@ export default function Skills() {
               <motion.div
                 key={`${skill.name}-${index}`}
                 className="skill-card"
-                whileHover={{
-                  scale: 1.1,
-                  boxShadow: '0 0 30px rgba(59, 130, 246, 0.6)',
-                  y: -10,
-                }}
                 transition={{ duration: 0.3 }}
               >
                 <div className="skill-icon">

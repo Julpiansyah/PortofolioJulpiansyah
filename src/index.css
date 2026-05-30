@@ -42,6 +42,10 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --accent-color:  ;
+}
+
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;

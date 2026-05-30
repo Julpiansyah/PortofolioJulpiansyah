@@ -7,7 +7,7 @@ export const certificates = [
     image:
       '/assets/certificates/E-Sertifikat - Muhamad Mulyana Julpiansyah.pdf',
 
-    url: '#',
+    url: '/assets/certificates/E-Sertifikat - Muhamad Mulyana Julpiansyah.pdf',
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ export const certificates = [
       'Sertifikat pelatihan dan pembelajaran Artificial Intelligence (AI).',
     image:
       '/assets/certificates/sertfikat belajar ai.pdf',
-    url: '#',
+    url: '/assets/certificates/sertfikat belajar ai.pdf',
   },
 
   {
@@ -26,7 +26,7 @@ export const certificates = [
       'Sertifikat penyelesaian kelas dasar pemrograman JavaScript.',
     image:
       '/assets/certificates/sertifikat dasar pemrograman javascript.pdf',
-    url: '#',
+    url: '/assets/certificates/sertifikat dasar pemrograman javascript.pdf',
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ export const certificates = [
       'Sertifikat penyelesaian kelas dasar pemrograman web.',
     image:
       '/assets/certificates/sertifikat dasar pemrograman web.pdf',
-    url: '#',
+    url: '/assets/certificates/sertifikat dasar pemrograman web.pdf',
   },
   {
     id: 5,
@@ -44,6 +44,6 @@ export const certificates = [
       'Sertifikat pelatihan E-Learning K3 atas nama Muhamad Muyana Julpiansyah.',
     image:
       '/assets/certificates/Sertifikat E-Learning K3 Muhamad Muyana Julpiansyah.pdf',
-    url: '#',
+    url: '/assets/certificates/Sertifikat E-Learning K3 Muhamad Muyana Julpiansyah.pdf',
   },
 ];

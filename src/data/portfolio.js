@@ -6,6 +6,8 @@ import {
   FaGitAlt,
   FaGithub,
 } from 'react-icons/fa';
+
+import { Code, Lightbulb, BookOpen } from 'lucide-react';
 import { SiVite } from 'react-icons/si';
 import { TbBrandFramer } from 'react-icons/tb';
 
@@ -45,21 +47,18 @@ export const navLinks = [
 export const values = [
   {
     title: 'Clean Code',
-    description:
-      'Menulis kode yang terstruktur, mudah dirawat, skalabel, dan mengikuti praktik terbaik.',
-    icon: '✨',
+    description: 'Menulis kode yang terstruktur, mudah dirawat, skalabel, dan mengikuti praktik terbaik.',
+    icon: Code, // simpan komponennya, bukan string
   },
   {
     title: 'Innovation',
-    description:
-      'Mencari solusi kreatif untuk masalah yang kompleks dengan memanfaatkan teknologi modern.',
-    icon: '💡',
+    description: 'Mencari solusi kreatif untuk masalah yang kompleks dengan memanfaatkan teknologi modern.',
+    icon: Lightbulb,
   },
   {
     title: 'Continuous Learning',
-    description:
-      'Selalu bersemangat untuk meningkatkan skill dan mengikuti perkembangan terbaru di dunia frontend.',
-    icon: '📚',
+    description: 'Selalu bersemangat untuk meningkatkan skill dan mengikuti perkembangan terbaru di dunia frontend.',
+    icon: BookOpen,
   },
 ];
 
