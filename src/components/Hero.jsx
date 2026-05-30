@@ -1,4 +1,5 @@
 import { personalInfo } from '../data/portfolio';
+import LiquidChrome from './LiquidChrome';
 
 const Hero = () => {
   return (
@@ -6,6 +7,8 @@ const Hero = () => {
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-navy-800 via-navy-900 to-navy-950"
     >
+      <LiquidChrome />
+
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-20 w-72 h-72 bg-amber-300/10 rounded-full blur-3xl" />
@@ -49,6 +52,7 @@ const Hero = () => {
             Contact Me
           </a>
         </div>
+
       </div>
     </section>
   );

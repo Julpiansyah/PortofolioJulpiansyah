@@ -1,41 +1,84 @@
-import { skills } from '../data/portfolio';
+import { motion } from 'framer-motion';
+import './Skills.css';
+import { 
+  FaReact, FaJs, FaHtml5, FaCss3Alt, FaGitAlt, FaGithub, FaPhp 
+} from 'react-icons/fa';
+import { SiFramer, SiMongodb, SiPostgresql, SiVite, SiDart } from 'react-icons/si';
 
-const Skills = () => {
+const skills = [
+  { name: 'React', Icon: FaReact },
+  { name: 'JavaScript', Icon: FaJs },
+  { name: 'HTML5', Icon: FaHtml5 },
+  { name: 'CSS3', Icon: FaCss3Alt },
+  { name: 'Git', Icon: FaGitAlt },
+  { name: 'GitHub', Icon: FaGithub },
+  { name: 'Vite', Icon: SiVite },
+  { name: 'Framer Motion', Icon: SiFramer },
+  { name: 'PHP', Icon: FaPhp },
+  { name: 'Dart', Icon: SiDart },
+  { name: 'MongoDB', Icon: SiMongodb },
+  { name: 'PostgreSQL', Icon: SiPostgresql }
+];
+
+export default function Skills() {
+  // Duplicate skills array for seamless infinite scrolling
+  const duplicatedSkills = [...skills, ...skills];
+
   return (
-    <section id="skills" className="py-20 sm:py-28 bg-cream-50/50 dark:bg-navy-900/30">
-      <div className="max-w-6xl mx-auto px-5 sm:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-navy-900 dark:text-white mb-4">
-            My Skills
-          </h2>
-          <p className="text-navy-400 dark:text-cream-200/60">
-            Technologies & Tools I Work With
-          </p>
-        </div>
+    <section id="skills" className="skills-section">
+      <div className="skills-wrapper">
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="section-title"
+        >
+          My Skills
+        </motion.h2>
 
-        {/* Skills Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-          {skills.map((skill) => {
-            const SkillIcon = skill.icon;
-            return (
-              <div
-                key={skill.name}
-                className="group flex flex-col items-center gap-3 p-6 rounded-2xl bg-white dark:bg-navy-900/60 border border-cream-200/50 dark:border-navy-700/50 transition-all duration-300"
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+          className="section-subtitle"
+        >
+          Technologies & Tools I Work With
+        </motion.p>
+
+        {/* Marquee Container - Infinite Scrolling */}
+        <div className="marquee-container">
+          <motion.div
+            className="marquee-content"
+            animate={{ x: [0, -1200] }}
+            transition={{
+              duration: 20,
+              ease: 'linear',
+              repeat: Infinity,
+            }}
+          >
+            {duplicatedSkills.map((skill, index) => (
+              <motion.div
+                key={`${skill.name}-${index}`}
+                className="skill-card"
+                whileHover={{
+                  scale: 1.1,
+                  boxShadow: '0 0 30px rgba(59, 130, 246, 0.6)',
+                  y: -10,
+                }}
+                transition={{ duration: 0.3 }}
               >
-                <div className="text-navy-400 dark:text-cream-200/60 transition-colors duration-300 ">
-                  <SkillIcon size={36} />
+                <div className="skill-icon">
+                  <skill.Icon />
                 </div>
-                <span className="text-sm font-medium text-navy-700 dark:text-cream-200/80">
-                  {skill.name}
-                </span>
-              </div>
-            );
-          })}
+                <span className="skill-name">{skill.name}</span>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>
   );
-};
+}
 
-export default Skills;
