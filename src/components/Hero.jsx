@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-navy-800 via-navy-900 to-navy-950"
+      className="min-h-[100dvh] flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-navy-800 via-navy-900 to-navy-950 pt-20 pb-10"
     >
       <LiquidChrome />
 
@@ -24,30 +24,30 @@ const Hero = () => {
         </div> */}
 
         {/* Name */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-5 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-white mb-6 animate-fade-in-up drop-shadow-lg" style={{ animationDelay: '0.1s' }}>
           {personalInfo.name}
         </h1>
 
         {/* Tagline */}
-        <p className="text-lg sm:text-xl md:text-2xl text-cream-200/70 max-w-2xl mx-auto mb-10 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+        <p className="text-xl sm:text-2xl md:text-3xl text-cream-200/80 max-w-3xl mx-auto mb-12 font-medium leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           {personalInfo.tagline}
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
           <a
             href="#about"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-amber-300 hover:bg-amber-400 text-navy-900 font-semibold rounded-xl transition-all duration-300 hover:-translate-y-1 shadow-lg shadow-amber-300/20 hover:shadow-amber-300/30"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-amber-300 hover:bg-amber-400 text-navy-900 font-bold rounded-2xl transition-all duration-300 hover:-translate-y-1.5 active:scale-95 shadow-xl shadow-amber-300/20 hover:shadow-amber-300/40 text-lg"
           >
             Get to Know Me
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
           </a>
 
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-medium rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white/5 hover:bg-white/10 text-white font-semibold rounded-2xl border border-white/10 hover:border-white/30 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1.5 active:scale-95 text-lg"
           >
             Contact Me
           </a>

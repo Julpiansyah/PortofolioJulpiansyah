@@ -11,11 +11,11 @@ const Certificates = () => {
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-8">
-        <header className="text-center mb-14 sm:mb-16">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-navy-900 dark:text-white mb-4">
+        <header className="text-center mb-14 sm:mb-20">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-navy-900 dark:text-white mb-6 tracking-tight">
             My Certificates
           </h1>
-          <p className="text-navy-400 dark:text-cream-200/60 max-w-xl mx-auto">
+          <p className="text-lg text-gray-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
             Collection of my achievements and certifications
           </p>
         </header>

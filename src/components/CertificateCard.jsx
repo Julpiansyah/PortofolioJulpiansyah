@@ -12,37 +12,49 @@ const CertificateCard = ({ certificate, index = 0 }) => {
       }`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
-      <article className="group relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 w-full min-h-[320px] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_24px_48px_rgba(26,50,99,0.35)] dark:hover:shadow-[0_24px_48px_rgba(255,197,112,0.2)]">
-        {String(image).toLowerCase().endsWith('.pdf') ? (
-          <iframe
-            title={title}
-            src={image}
-            className="absolute inset-0 h-full w-full opacity-90"
-          />
-        ) : (
-          <img
-            src={image}
-            alt={title}
-            loading="lazy"
-            className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-          />
-        )}
+      <article className="group relative flex flex-col justify-end overflow-hidden rounded-3xl bg-white dark:bg-navy-900/50 border border-gray-200 dark:border-white/10 w-full min-h-[350px] shadow-sm hover:shadow-xl transition-all duration-500 ease-out hover:-translate-y-2">
+        
+        {/* Image Container with overflow hidden to prevent scale-105 from leaking outside rounded corners */}
+        <div className="absolute inset-0 overflow-hidden rounded-3xl">
+          {String(image).toLowerCase().endsWith('.pdf') ? (
+            <iframe
+              title={title}
+              src={image}
+              className="absolute inset-0 h-full w-full opacity-90 object-cover"
+            />
+          ) : (
+            <img
+              src={image}
+              alt={title}
+              loading="lazy"
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+            />
+          )}
+        </div>
 
 
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 transition-opacity duration-500 group-hover:via-gray-900/50" />
+        {/* Gradient Overlay for Text Legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent transition-opacity duration-500 group-hover:via-gray-900/60 z-10" />
 
-        <h3 className="z-10 mt-3 text-2xl sm:text-3xl font-bold text-white">{title}</h3>
+        {/* Content Container */}
+        <div className="relative z-20 p-6 sm:p-8 flex flex-col h-full justify-end">
+          <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 leading-tight">
+            {title}
+          </h3>
 
-        <div className="z-10 text-sm leading-6 text-gray-300">{description}</div>
+          <div className="text-sm sm:text-base leading-relaxed text-slate-300 mb-5 line-clamp-2">
+            {description}
+          </div>
 
-        <a
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="z-10 mt-4 w-fit rounded-lg bg-white/20 px-4 py-2 text-sm text-white backdrop-blur-md transition hover:bg-white hover:text-black"
-        >
-          View Certificate
-        </a>
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-fit rounded-xl bg-white/10 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur-md border border-white/20 transition-all duration-300 hover:bg-white hover:text-navy-900 shadow-sm hover:shadow-md"
+          >
+            View Certificate
+          </a>
+        </div>
       </article>
     </div>
   );

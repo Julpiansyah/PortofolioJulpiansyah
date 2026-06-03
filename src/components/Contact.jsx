@@ -22,37 +22,37 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-28 bg-white dark:bg-navy-950">
-      <div className="max-w-6xl mx-auto px-5 sm:px-8">
+    <section id="contact" className="py-24 sm:py-32 bg-white dark:bg-navy-950 relative">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-navy-900 dark:text-white mb-4">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-navy-900 dark:text-white mb-6 tracking-tight">
             Get In Touch
           </h2>
-          <p className="text-navy-400 dark:text-cream-200/60">
+          <p className="text-lg text-navy-500 dark:text-cream-200/70 max-w-2xl mx-auto">
             Let's talk about your next project
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
           {/* Contact Info */}
-          <div className="space-y-6">
-            <h3 className="text-xl font-semibold text-navy-900 dark:text-white">
+          <div className="space-y-8">
+            <h3 className="text-2xl font-bold text-navy-900 dark:text-white">
               Contact Information
             </h3>
 
-            <div className="space-y-4">
+            <div className="space-y-5">
               {contactInfo.map((item) => {
                 const content = (
-                  <div className="flex items-center gap-4 p-4 rounded-xl bg-cream-50 dark:bg-navy-900/50 border border-cream-200/50 dark:border-navy-700/50 transition-all duration-200 hover:-translate-y-0.5">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center text-lg">
+                  <div className="flex items-center gap-5 p-5 rounded-2xl bg-cream-50 dark:bg-navy-900/40 border border-cream-200/60 dark:border-navy-700/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:hover:border-amber-400/30 backdrop-blur-sm group">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-900/40 flex items-center justify-center text-xl text-amber-600 dark:text-amber-400 transition-transform duration-300 group-hover:scale-110">
                       {item.icon}
                     </div>
                     <div>
-                      <p className="text-xs font-medium text-navy-400 dark:text-cream-200/50 uppercase tracking-wider">
+                      <p className="text-sm font-semibold text-navy-500 dark:text-cream-200/60 uppercase tracking-widest mb-1">
                         {item.label}
                       </p>
-                      <p className="text-sm font-medium text-navy-700 dark:text-cream-200/80">
+                      <p className="text-base font-medium text-navy-800 dark:text-cream-200/90">
                         {item.value}
                       </p>
                     </div>
@@ -78,12 +78,12 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="space-y-6">
-            <h3 className="text-xl font-semibold text-navy-900 dark:text-white">
+          <div className="space-y-8">
+            <h3 className="text-2xl font-bold text-navy-900 dark:text-white">
               Send Me a Message
             </h3>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <input
                   type="text"
@@ -92,7 +92,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-xl bg-cream-50 dark:bg-navy-900/50 border border-cream-200/50 dark:border-navy-700/50 text-navy-900 dark:text-white placeholder:text-navy-400 dark:placeholder:text-cream-200/40 focus:outline-none focus:ring-2 focus:ring-amber-300/30 focus:border-amber-300 transition-all duration-200 text-sm"
+                  className="w-full px-5 py-4 rounded-2xl bg-cream-50 dark:bg-navy-900/40 border border-cream-200/60 dark:border-navy-700/60 text-navy-900 dark:text-white placeholder:text-navy-400 dark:placeholder:text-cream-200/50 focus:outline-none focus:ring-2 focus:ring-amber-300 focus:border-amber-300 transition-all duration-300 text-base shadow-sm focus:-translate-y-1 focus:shadow-md"
                 />
               </div>
 
@@ -104,7 +104,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-xl bg-cream-50 dark:bg-navy-900/50 border border-cream-200/50 dark:border-navy-700/50 text-navy-900 dark:text-white placeholder:text-navy-400 dark:placeholder:text-cream-200/40 focus:outline-none focus:ring-2 focus:ring-amber-300/30 focus:border-amber-300 transition-all duration-200 text-sm"
+                  className="w-full px-5 py-4 rounded-2xl bg-cream-50 dark:bg-navy-900/40 border border-cream-200/60 dark:border-navy-700/60 text-navy-900 dark:text-white placeholder:text-navy-400 dark:placeholder:text-cream-200/50 focus:outline-none focus:ring-2 focus:ring-amber-300 focus:border-amber-300 transition-all duration-300 text-base shadow-sm focus:-translate-y-1 focus:shadow-md"
                 />
               </div>
 
@@ -112,20 +112,20 @@ const Contact = () => {
                 <textarea
                   name="message"
                   placeholder="Your Message"
-                  rows={5}
+                  rows={6}
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-xl bg-cream-50 dark:bg-navy-900/50 border border-cream-200/50 dark:border-navy-700/50 text-navy-900 dark:text-white placeholder:text-navy-400 dark:placeholder:text-cream-200/40 focus:outline-none focus:ring-2 focus:ring-amber-300/30 focus:border-amber-300 transition-all duration-200 text-sm resize-none"
+                  className="w-full px-5 py-4 rounded-2xl bg-cream-50 dark:bg-navy-900/40 border border-cream-200/60 dark:border-navy-700/60 text-navy-900 dark:text-white placeholder:text-navy-400 dark:placeholder:text-cream-200/50 focus:outline-none focus:ring-2 focus:ring-amber-300 focus:border-amber-300 transition-all duration-300 text-base resize-none shadow-sm focus:-translate-y-1 focus:shadow-md"
                 />
               </div>
 
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-navy-800 hover:bg-navy-900 text-white font-medium rounded-xl transition-all duration-300 hover:-translate-y-1 shadow-lg shadow-navy-800/20 hover:shadow-navy-800/30 text-sm"
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 bg-navy-800 hover:bg-navy-900 text-white font-bold rounded-2xl transition-all duration-300 hover:-translate-y-1.5 active:scale-95 shadow-xl shadow-navy-800/20 hover:shadow-navy-800/40 text-base group"
               >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                 </svg>
                 <span>Send Message</span>
               </button>
