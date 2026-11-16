@@ -1,17 +1,23 @@
-import Hero from '../components/Hero';
-import About from '../components/About';
-import Skills from '../components/Skills';
-import Contact from '../components/Contact';
+import Hero from '../components/sections/Hero';
+import About from '../components/sections/About';
+import Stack from '../components/sections/Stack';
+import AITools from '../components/sections/AITools';
+import Work from '../components/sections/Work';
+import Experience from '../components/sections/Experience';
+import Certificates from '../components/sections/Certificates';
+import Contact from '../components/sections/Contact';
 
-const Home = () => {
+export default function Home() {
   return (
     <main>
       <Hero />
       <About />
-      <Skills />
+      <Stack />
+      <AITools />
+      <Work />
+      <Experience />
+      <Certificates />
       <Contact />
     </main>
   );
-};
-
-export default Home;
+}

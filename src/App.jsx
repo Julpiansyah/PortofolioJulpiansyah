@@ -1,22 +1,42 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { AnimatePresence, MotionConfig } from 'framer-motion';
+import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
+import Atmosphere from './components/layout/Atmosphere';
+import PageTransition from './components/layout/PageTransition';
 import Home from './pages/Home';
-import Projects from './pages/Projects';
-import Certificates from './pages/Certificates';
 
-function App() {
+function AnimatedRoutes() {
+  const location = useLocation();
   return (
-    <Router>
-      <div className="min-h-screen bg-white dark:bg-navy-950 text-navy-900 dark:text-white">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/certificates" element={<Certificates />} />
-        </Routes>
-      </div>
-    </Router>
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route
+          path="/"
+          element={
+            <PageTransition>
+              <Home />
+              <Footer />
+            </PageTransition>
+          }
+        />
+        {/* Tautan lama diarahkan ke section di halaman utama */}
+        <Route path="/certificates" element={<Navigate to="/#certificates" replace />} />
+        <Route path="/projects" element={<Navigate to="/#work" replace />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </AnimatePresence>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <MotionConfig reducedMotion="user">
+      <Router>
+        <Atmosphere />
+        <Navbar />
+        <AnimatedRoutes />
+      </Router>
+    </MotionConfig>
+  );
+}
