@@ -60,7 +60,7 @@ export default function Experience() {
                   <MotionP {...inView(0.05, { y: 8, duration: DUR.fast })} className="mono-label uppercase text-muted">
                     {item.meta}
                   </MotionP>
-                  <h3 className="mt-3 font-serif text-[clamp(2.25rem,3.6vw,3.5rem)] leading-none text-fg">
+                  <h3 className="mt-3 font-head text-[clamp(2.25rem,3.6vw,3.5rem)] leading-none text-fg">
                     <MaskLine delay={0.1} duration={DUR.reveal}>
                       {item.title}
                     </MaskLine>
@@ -89,7 +89,7 @@ export default function Experience() {
               >
                 <div className="flex items-start justify-between gap-4">
                   <p
-                    className={`flex items-center gap-2 font-mono text-[12px] tracking-[0.06em] ${
+                    className={`flex items-center gap-2 font-label text-[12px] tracking-[0.06em] ${
                       edu.current ? 'text-accent' : 'text-muted'
                     }`}
                   >
@@ -101,9 +101,9 @@ export default function Experience() {
                     )}
                     {edu.status}
                   </p>
-                  <span className="font-mono text-[12px] tabular-nums text-muted">{edu.years}</span>
+                  <span className="font-label text-[12px] tabular-nums text-muted">{edu.years}</span>
                 </div>
-                <h3 className="mt-6 font-serif text-[32px] leading-[1.05] text-fg transition-colors duration-300 group-hover:text-accent">
+                <h3 className="mt-6 font-head text-[32px] leading-[1.05] text-fg transition-colors duration-300 group-hover:text-accent">
                   {edu.school}
                 </h3>
               </Reveal>

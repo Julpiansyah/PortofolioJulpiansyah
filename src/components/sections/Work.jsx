@@ -61,14 +61,14 @@ export default function Work() {
 
                     <MotionSpan
                       {...inView(d + 0.1, { y: 8, duration: DUR.fast })}
-                      className="relative font-mono text-[12px] text-muted transition-colors duration-300 group-hover:text-accent group-focus-visible:text-accent"
+                      className="relative font-label text-[12px] text-muted transition-colors duration-300 group-hover:text-accent group-focus-visible:text-accent"
                     >
                       {String(i + 1).padStart(2, '0')}
                     </MotionSpan>
 
                     <span className="display-m relative text-fg">
                       <MaskLine delay={d + 0.08} duration={DUR.reveal} className="-mr-[0.4em] pr-[0.4em]">
-                        <span className="inline-block transition-transform duration-700 ease-out-expo group-hover:translate-x-3 group-hover:italic group-focus-visible:italic">
+                        <span className="inline-block transition-transform duration-700 ease-out-expo group-hover:translate-x-3 group-hover:text-accent group-focus-visible:text-accent">
                           {project.title}
                         </span>
                       </MaskLine>
@@ -95,7 +95,7 @@ export default function Work() {
                       className="relative col-start-3 row-start-1 flex items-center justify-self-end gap-3 xl:col-start-4"
                     >
                       {project.category && (
-                        <span className="hidden font-mono text-[12px] tracking-[0.04em] text-muted transition-colors duration-300 group-hover:text-accent sm:inline">
+                        <span className="hidden font-label text-[12px] tracking-[0.04em] text-muted transition-colors duration-300 group-hover:text-accent sm:inline">
                           {project.category}
                         </span>
                       )}
@@ -122,7 +122,7 @@ export default function Work() {
                 exit={{ opacity: 0, scale: 0.6 }}
                 transition={{ duration: DUR.micro, ease: EASE }}
               >
-                <span className="btn-primary relative isolate ml-5 mt-5 inline-flex items-center gap-2 overflow-hidden rounded-full px-4 py-2 text-[13px] font-medium">
+                <span className="btn-primary relative isolate ml-5 mt-5 inline-flex items-center gap-2 overflow-hidden rounded-full px-4 py-2 font-sub text-[12px] uppercase tracking-[0.1em]">
                   <LuGithub className="h-4 w-4" />
                   View source
                 </span>

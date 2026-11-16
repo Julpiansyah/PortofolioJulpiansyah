@@ -4,8 +4,9 @@ Portfolio personal **one-page scrolling** dengan design system *Dark Editorial F
 
 ## Struktur halaman
 
-- `/` — satu halaman: Hero → About → Stack → AI Tools → Work → Experience → Certificates → Contact → Footer
-- `/certificates` → dialihkan ke `/#certificates`; `/projects` → `/#work`
+- `/` — satu halaman: Hero → About → Stack → AI Tools → Work → Experience → Contact → Footer
+- `/certificates` — halaman sertifikat (PDF dibuka di tab baru)
+- `/projects` — dialihkan ke `/#work`
 
 ## Teknologi
 
@@ -15,7 +16,9 @@ Portfolio personal **one-page scrolling** dengan design system *Dark Editorial F
 - **React Router DOM**
 - **React Icons** + SVG dari `@lobehub/icons-static-svg` (MIT) di `src/components/icons/LobeIcons.jsx`
 
-Font: Instrument Serif, Geist, JetBrains Mono (Google Fonts).
+Font (self-hosted, SIL OFL 1.1, lisensi di `public/fonts/*/OFL.txt`):
+- **Gasoek One** — identitas utama: nama, judul section, judul kartu, CTA besar, footer.
+- **Archivo** — pendamping netral untuk paragraf, label, navigasi, dan teks kecil.
 
 Arah visual: "Nocturne Editorial" — atmosfer gelap sinematik dengan cahaya ambient lime, fine grain, permukaan berlapis dengan spotlight, dan sistem tombol pill.
 
@@ -24,8 +27,7 @@ Arah visual: "Nocturne Editorial" — atmosfer gelap sinematik dengan cahaya amb
 ```
 src/
   data/portfolio.js        # seluruh konten (profil, stack, AI tools, project, pengalaman, kontak)
-  data/certificates.js     # data sertifikat (+ info yang tertera pada sertifikat)
-  assets/certificates/     # render PDF sertifikat per halaman (WebP sm 1100px & lg 2400px)
+  data/certificates.js     # data sertifikat
   components/layout/       # Navbar, Footer, Atmosphere (cahaya, grain, garis), PageTransition
   components/sections/     # Hero, About, Stack, AITools, Work, Experience, Contact
   components/ui/           # Button (pill: primary/secondary/ghost), SectionHeader, IconTile, Magnetic, MaskLine, SplitText, ...
@@ -48,6 +50,5 @@ npm run lint
 
 ## Catatan
 
-- PDF sertifikat asli tetap di `public/assets/certificates/` sebagai arsip (tautan "PDF" di lightbox).
-- Sertifikat ditampilkan sebagai gambar; klik untuk lightbox (zoom, geser, navigasi halaman, Esc untuk menutup).
+- Asset statis (PDF sertifikat) ada di `public/assets/`.
 - Foto hero (`src/assets/profile-cutout.webp`, ±41 KB) adalah foto asli dengan latar dihapus.

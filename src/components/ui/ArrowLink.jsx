@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
  * Hover: warna accent + garis bawah tergambar dari kiri + panah bergeser kanan-atas.
  */
 export default function ArrowLink({ href, to, children, className = '', ...rest }) {
-  const cls = `group inline-flex items-center gap-1.5 font-mono text-[12px] tracking-[0.04em] text-fg transition-colors duration-300 hover:text-accent focus-visible:text-accent ${className}`;
+  const cls = `group inline-flex items-center gap-1.5 font-label text-[11.5px] uppercase tracking-[0.12em] text-fg transition-colors duration-300 hover:text-accent focus-visible:text-accent ${className}`;
   const content = (
     <>
       <span className="bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-[position:0_100%] bg-no-repeat pb-0.5 transition-[background-size] duration-500 ease-out-expo group-hover:bg-[length:100%_1px] group-focus-visible:bg-[length:100%_1px]">

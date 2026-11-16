@@ -6,7 +6,7 @@ import { MotionSpan, EASE } from '../ui/motion';
  * Signature opening — nama di Hero.
  * Timeline (detik):
  *   0.15 → "Muhamad"      per huruf: mask + naik + blur→tajam  (stagger 0.045)
- *   0.55 → "Mulyana"      serif italic: sapuan kiri→kanan seperti tanda tangan
+ *   0.55 → "Mulyana"      sapuan kiri→kanan seperti tanda tangan + garis lime
  *   0.70 → "Julpiansyah"  per huruf: mask + momentum (miring → tegak) (stagger 0.032)
  *   1.35 → garis lime     tergambar kiri→kanan, lalu kilau cahaya melintas (berkala, pelan)
  * Selesai ±1.9 dtk. Hanya transform/opacity/filter — tanpa layout shift.
@@ -57,14 +57,18 @@ export default function HeroName() {
   const reduce = useReducedMotion();
   const { firstName, middleName, lastName, fullName } = personal;
 
+  // Ukuran khusus nama: ±17% lebih kecil dari display-xl agar wajah di foto tetap terlihat
   return (
-    <h1 className="display-xl font-sans font-medium text-fg" aria-label={fullName}>
+    <h1
+      className="font-display text-[clamp(2.25rem,10vw,9.25rem)] leading-[1] tracking-[-0.02em] text-fg"
+      aria-label={fullName}
+    >
       {/* Muhamad */}
       <CharLine text={firstName} delay={0.15} stagger={0.045} blur reduce={reduce} />
 
-      {/* Mulyana — signature serif */}
-      <span className="-mb-[0.18em] block w-fit pb-[0.18em] pr-[0.12em]" aria-hidden="true">
-        <span className="group/sig relative inline-block font-serif font-normal italic tracking-[-0.01em]">
+      {/* Mulyana — signature: sapuan reveal + garis lime + cahaya halus */}
+      <span className="-mb-[0.16em] block w-fit pb-[0.16em] pr-[0.08em]" aria-hidden="true">
+        <span className="group/sig relative inline-block">
           <MotionSpan
             className="signature-glow inline-block will-change-transform"
             initial={reduce ? false : { clipPath: 'inset(-25% 100% -25% -8%)', y: '18%', opacity: 0.2 }}
@@ -85,7 +89,7 @@ export default function HeroName() {
 
           {/* Garis lime: tergambar kiri → kanan, lalu kilau melintas berkala */}
           <MotionSpan
-            className="signature-line absolute bottom-[0.06em] left-0 block h-[3px] w-full origin-left rounded-full bg-accent shadow-[0_0_18px_color-mix(in_srgb,var(--accent)_55%,transparent)] transition-[box-shadow,scale] duration-500 ease-out-expo group-hover/sig:scale-y-150 group-hover/sig:shadow-[0_0_30px_var(--accent)] md:h-[5px]"
+            className="signature-line absolute -bottom-[0.04em] left-0 block h-[3px] w-full origin-left rounded-full bg-accent shadow-[0_0_18px_color-mix(in_srgb,var(--accent)_55%,transparent)] transition-[box-shadow,scale] duration-500 ease-out-expo group-hover/sig:scale-y-150 group-hover/sig:shadow-[0_0_30px_var(--accent)] md:h-[5px]"
             initial={reduce ? false : { scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.9, ease: [0.65, 0, 0.35, 1], delay: 1.35 }}

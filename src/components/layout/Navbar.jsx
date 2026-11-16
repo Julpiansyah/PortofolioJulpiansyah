@@ -6,6 +6,7 @@ import { useActiveSection } from '../../hooks/useActiveSection';
 import ThemeToggle from '../ui/ThemeToggle';
 import MaskLine from '../ui/MaskLine';
 import { MotionDiv, MotionHeader, MotionSpan, MotionLi, EASE, DUR } from '../ui/motion';
+import logo from '../../assets/logo.webp';
 
 // 'home' & 'ai-tools' ikut diamati agar indikator tidak "nyangkut" di section sebelumnya
 const SECTION_IDS = ['home', 'ai-tools', ...navLinks.map((l) => l.id)];
@@ -77,14 +78,18 @@ export default function Navbar() {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
               }}
-              className="group relative grid h-11 w-11 place-items-center rounded-full font-serif text-[24px] italic leading-none text-fg"
+              className="group relative block shrink-0 outline-none focus-visible:rounded-lg focus-visible:ring-2 focus-visible:ring-accent"
               aria-label={`${personal.fullName} — home`}
             >
-              <span
-                aria-hidden="true"
-                className="absolute inset-0 rounded-full border border-line opacity-0 transition-[opacity,transform] duration-500 ease-out-expo group-hover:scale-110 group-hover:opacity-100"
+              {/* Logo graffiti (latar transparan) — sedikit membesar & menyala lime saat hover */}
+              <img
+                src={logo}
+                alt=""
+                width="400"
+                height="221"
+                decoding="async"
+                className="block h-[44px] w-auto transition-[transform,filter] duration-500 ease-out-expo group-hover:scale-[1.06] group-hover:drop-shadow-[0_0_14px_color-mix(in_srgb,var(--accent)_55%,transparent)] md:h-[58px]"
               />
-              <span className="transition-colors duration-300 group-hover:text-accent">{personal.initials}</span>
             </Link>
 
             {/* Kapsul navigasi melayang */}
@@ -109,7 +114,7 @@ export default function Navbar() {
                     )}
                     {renderLink(
                       link,
-                      `relative block rounded-full px-3 py-2 font-mono text-[12px] tracking-[0.04em] lg:px-4 transition-colors duration-300 hover:text-accent ${
+                      `relative block rounded-full px-3 py-2 font-label text-[11.5px] uppercase tracking-[0.12em] lg:px-4 transition-colors duration-300 hover:text-accent ${
                         isActive ? 'text-accent' : 'text-fg'
                       }`,
                       link.label
@@ -167,7 +172,7 @@ export default function Navbar() {
                 <li key={link.id} className="border-b border-line">
                   {renderLink(
                     link,
-                    `flex items-baseline justify-between py-4 font-serif text-[46px] leading-none ${
+                    `flex items-baseline justify-between py-4 font-head text-[clamp(2rem,10vw,2.75rem)] leading-none ${
                       active === link.id ? 'text-accent' : 'text-fg'
                     }`,
                     <>
@@ -175,7 +180,7 @@ export default function Navbar() {
                         {link.label}
                       </MaskLine>
                       <MotionSpan
-                        className="font-mono text-[12px] text-muted"
+                        className="font-label text-[12px] text-muted"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.4 + i * 0.06, duration: DUR.base }}
@@ -199,7 +204,7 @@ export default function Navbar() {
                     href={s.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-mono text-[12px] tracking-[0.05em] text-muted transition-colors hover:text-accent"
+                    className="font-label text-[12px] tracking-[0.05em] text-muted transition-colors hover:text-accent"
                   >
                     {s.label} ↗
                   </a>

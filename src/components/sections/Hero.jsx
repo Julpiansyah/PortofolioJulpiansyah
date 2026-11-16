@@ -6,7 +6,8 @@ import { useLocalTime } from '../../hooks/useLocalTime';
 import HeroName from './HeroName';
 import Button from '../ui/Button';
 import { MotionDiv, MotionSpan, EASE, DUR } from '../ui/motion';
-import profile from '../../assets/profile-cutout.webp';
+// Foto Hero (full-body, latar dihapus). Foto About tetap memakai profile-cutout.webp.
+import heroPhoto from '../../assets/hero-fullbody.webp';
 
 /*
  * Urutan masuk (detik) — nama adalah pusat perhatian (lihat HeroName.jsx, selesai ±1.9 dtk):
@@ -84,16 +85,16 @@ export default function Hero() {
           </MotionDiv>
         </MotionDiv>
 
-        {/* Foto + orbit */}
+        {/* Foto full-body + orbit — tinggi mengikuti ruang antara navbar & baris bawah agar pose utuh */}
         <MotionDiv
           style={{ y: photoY }}
-          className="pointer-events-none relative order-1 mx-auto mt-6 w-[80%] max-w-[360px] md:absolute md:bottom-[160px] md:right-[-9%] md:order-none md:mt-0 md:w-[44%] md:max-w-[600px] lg:right-[-2%] lg:w-[46%] xl:right-[9%]"
+          className="pointer-events-none relative order-1 mx-auto mt-8 w-[72%] max-w-[300px] md:absolute md:bottom-[150px] md:right-[1%] md:top-[104px] md:order-none md:mx-0 md:mt-0 md:aspect-[837/1383] md:w-auto md:max-w-none lg:right-[4%] xl:right-[8%]"
         >
           {/* Cincin orbit tipis — bergerak berlawanan dengan foto untuk kesan kedalaman */}
           <MotionDiv
             aria-hidden="true"
             style={{ x: ringPX, y: ringPY }}
-            className="absolute left-[-9%] top-[-29%] aspect-square w-[118%]"
+            className="absolute left-1/2 top-[30%] aspect-square w-[150%] -translate-x-1/2 -translate-y-1/2"
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.4, ease: EASE, delay: 0.4 }}
@@ -116,25 +117,33 @@ export default function Hero() {
             </svg>
           </MotionDiv>
 
-          <MotionDiv style={{ x: photoPX, y: photoPY }} className="relative">
+          {/* Bayangan lantai halus agar kursi & kaki terasa menapak */}
+          <span
+            aria-hidden="true"
+            className="absolute -bottom-[1.5%] left-[6%] right-[6%] h-[5%] rounded-[50%] bg-[radial-gradient(closest-side,var(--shadow-color),transparent)]"
+          />
+
+          <MotionDiv style={{ x: photoPX, y: photoPY }} className="relative md:h-full">
             <MotionDiv
+              className="md:h-full"
               initial={reduce ? { opacity: 0 } : { clipPath: 'inset(100% 0% 0% 0%)' }}
               animate={reduce ? { opacity: 1 } : { clipPath: 'inset(0% 0% 0% 0%)' }}
               transition={{ duration: 1.1, ease: EASE, delay: 0.45 }}
             >
               <MotionDiv
+                className="md:h-full"
                 initial={{ scale: reduce ? 1 : 1.12 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 1.4, ease: EASE, delay: 0.45 }}
               >
                 <img
-                  src={profile}
+                  src={heroPhoto}
                   alt={`Portrait of ${personal.fullName}`}
-                  width="704"
-                  height="960"
+                  width="837"
+                  height="1383"
                   fetchPriority="high"
                   decoding="async"
-                  className="block h-auto w-full [mask-image:linear-gradient(to_bottom,black_60%,transparent_95%)]"
+                  className="block h-auto w-full object-contain md:h-full"
                 />
               </MotionDiv>
             </MotionDiv>
@@ -186,7 +195,7 @@ export default function Hero() {
 
           <div className="flex flex-col items-start gap-3 md:items-end">
             <MotionDiv {...enter(1.3, 10)}>
-              <span className="surface inline-flex items-center gap-2.5 rounded-full px-4 py-2 font-mono text-[11px] tracking-[0.04em] text-fg">
+              <span className="surface inline-flex items-center gap-2.5 rounded-full px-4 py-2 font-label text-[11px] tracking-[0.04em] text-fg">
                 <span className="relative flex h-1.5 w-1.5">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60 motion-reduce:hidden" />
                   <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
@@ -195,7 +204,7 @@ export default function Hero() {
               </span>
             </MotionDiv>
             <MotionDiv {...enter(1.4, 8)} className="md:hidden">
-              <p className="font-mono text-[11px] tracking-[0.06em] text-muted">
+              <p className="font-label text-[11px] tracking-[0.06em] text-muted">
                 {personal.city} · <span className="tabular-nums">{time}</span> GMT+7
               </p>
             </MotionDiv>
@@ -204,7 +213,7 @@ export default function Hero() {
               <a
                 href="#about"
                 onClick={scrollTo('about')}
-                className="group mt-4 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.1em] text-muted transition-colors duration-300 hover:text-accent"
+                className="group mt-4 flex items-center gap-3 font-label text-[11px] uppercase tracking-[0.1em] text-muted transition-colors duration-300 hover:text-accent"
               >
                 Scroll
                 <span className="relative flex h-10 w-6 justify-center rounded-full border border-line-strong transition-colors duration-300 group-hover:border-accent">

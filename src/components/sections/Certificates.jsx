@@ -57,7 +57,7 @@ function CertificateCard({ cert, index, onOpen }) {
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 grid place-items-center bg-black/0 transition-colors duration-500 group-hover:bg-black/25"
           >
-            <span className="flex translate-y-3 items-center gap-2 rounded-full bg-accent px-4 py-2 text-[13px] font-medium text-on-accent opacity-0 shadow-[0_10px_30px_-10px_var(--accent)] transition-[opacity,transform] duration-500 ease-out-expo group-hover:translate-y-0 group-hover:opacity-100">
+            <span className="flex translate-y-3 items-center gap-2 rounded-full bg-accent px-4 py-2 font-sub text-[12px] uppercase tracking-[0.1em] text-on-accent opacity-0 shadow-[0_10px_30px_-10px_var(--accent)] transition-[opacity,transform] duration-500 ease-out-expo group-hover:translate-y-0 group-hover:opacity-100">
               <LuMaximize2 className="h-3.5 w-3.5" />
               View
             </span>
@@ -71,12 +71,12 @@ function CertificateCard({ cert, index, onOpen }) {
           <p className="mono-label uppercase text-accent">{cert.issuer}</p>
           <span className="mono-label shrink-0 text-muted">{String(index + 1).padStart(2, '0')}</span>
         </div>
-        <h3 className="mt-3 font-serif text-[clamp(1.6rem,2.2vw,2.1rem)] leading-[1.08] text-fg transition-colors duration-300 group-hover:text-accent">
+        <h3 className="mt-3 font-head text-[clamp(1.4rem,1.9vw,1.85rem)] leading-[1.1] text-fg transition-colors duration-300 group-hover:text-accent">
           {cert.program}
         </h3>
         <p className="mt-2.5 flex-1 text-[14.5px] leading-[1.6] text-muted">{cert.description}</p>
 
-        <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-line pt-4 font-mono text-[11.5px] tracking-[0.04em] text-muted">
+        <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-line pt-4 font-label text-[11.5px] tracking-[0.04em] text-muted">
           <span className="text-fg">{cert.date}</span>
           {cert.role && <span>{cert.role}</span>}
           {cert.credentialId && <span>ID {cert.credentialId}</span>}

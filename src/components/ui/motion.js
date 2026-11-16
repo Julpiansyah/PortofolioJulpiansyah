@@ -32,3 +32,4 @@ export const MotionLi = motion.li;
 export const MotionHeader = motion.header;
 export const MotionButton = motion.button;
 export const MotionP = motion.p;
+export const MotionA = motion.a;

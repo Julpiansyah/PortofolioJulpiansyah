@@ -33,7 +33,7 @@ export default function Footer() {
         className="pointer-events-none absolute bottom-[-40%] left-1/2 h-[80%] w-[90%] -translate-x-1/2 rounded-[50%] bg-[radial-gradient(closest-side,color-mix(in_srgb,var(--accent)_14%,transparent),transparent)]"
       />
 
-      <div className="shell relative grid grid-cols-2 gap-x-6 gap-y-6 py-12 font-mono text-[12px] tracking-[0.04em] md:grid-cols-[1.3fr_1fr_1fr_auto] md:items-center">
+      <div className="shell relative grid grid-cols-2 gap-x-6 gap-y-6 py-12 font-label text-[12px] tracking-[0.04em] md:grid-cols-[1.3fr_1fr_1fr_auto] md:items-center">
         <p className="text-fg">
           © {new Date().getFullYear()} {personal.fullName}
         </p>
@@ -73,11 +73,11 @@ export default function Footer() {
         </button>
       </div>
 
-      <p className="shell relative pb-4 font-mono text-[11px] tracking-[0.06em] text-muted">Designed &amp; built by me</p>
+      <p className="shell relative pb-4 font-label text-[11px] tracking-[0.06em] text-muted">Designed &amp; built by me</p>
 
       {/* Nama raksasa outline */}
-      <div aria-hidden="true" className="relative h-[16vw] overflow-hidden">
-        <div className="outline-text select-none whitespace-nowrap pl-[1vw] font-sans text-[19.5vw] font-medium leading-[0.82] tracking-[-0.03em]">
+      <div aria-hidden="true" className="relative h-[19vw] overflow-hidden">
+        <div className="outline-text select-none whitespace-nowrap pl-[1vw] font-display text-[26vw] leading-[0.8]">
           {letters.map((ch, i) => (
             <Letter key={i} char={ch} index={i} total={letters.length} progress={scrollYProgress} reduce={reduce} />
           ))}

@@ -62,7 +62,6 @@ export const personal = {
   middleName: 'Mulyana',
   lastName: 'Julpiansyah',
   fullName: 'Muhamad Mulyana Julpiansyah',
-  initials: 'MJ',
   tagline: 'I build things that ship, from web to mobile.',
   intro:
     'Full-stack and mobile developer. Grade 12 at SMK Wikrama Bogor, building real products since day one.',
@@ -83,13 +82,15 @@ export const navLinks = [
   { label: 'Contact', id: 'contact' },
 ];
 
+// handle = diturunkan dari URL yang sudah ada (bukan akun baru)
 export const socials = [
-  { label: 'GitHub', url: 'https://github.com/Julpiansyah' },
+  { label: 'GitHub', url: 'https://github.com/Julpiansyah', handle: '@Julpiansyah' },
   {
     label: 'LinkedIn',
     url: 'https://www.linkedin.com/in/muhamad-mulyana-julpiansyah-064a1b410/',
+    handle: 'Muhamad Mulyana Julpiansyah',
   },
-  { label: 'Instagram', url: 'https://www.instagram.com/yanajulpian.s/' },
+  { label: 'Instagram', url: 'https://www.instagram.com/yanajulpian.s/', handle: '@yanajulpian.s' },
 ];
 
 /* ---------- About (teks persis dari Figma) ---------- */
@@ -411,5 +412,10 @@ export const contact = {
     { label: 'Phone', value: personal.phone, href: personal.phoneHref },
     { label: 'Location', value: personal.location },
     { label: 'Instagram', value: '@yanajulpian.s', href: 'https://www.instagram.com/yanajulpian.s/' },
+    {
+      label: 'LinkedIn',
+      value: 'Muhamad Mulyana Julpiansyah',
+      href: 'https://www.linkedin.com/in/muhamad-mulyana-julpiansyah-064a1b410/',
+    },
   ],
 };

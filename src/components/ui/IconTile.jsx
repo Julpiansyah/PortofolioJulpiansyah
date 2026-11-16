@@ -29,7 +29,7 @@ export function TileFace({ Icon, mark, size = 'md', className = '' }) {
       ) : (
         <span
           aria-hidden="true"
-          className={`font-mono font-medium tracking-tight transition-transform duration-500 ease-out-expo group-hover:scale-[1.08] ${s.mark}`}
+          className={`font-sub font-extrabold tracking-tight transition-transform duration-500 ease-out-expo group-hover:scale-[1.08] ${s.mark}`}
         >
           {mark}
         </span>
@@ -47,7 +47,7 @@ export default function IconTile({ name, Icon, mark, size = 'md', labelMode = 'h
     <figure tabIndex={0} title={name} className={`group flex flex-col items-center gap-2.5 outline-none ${className}`}>
       <TileFace Icon={Icon} mark={mark} size={size} />
       <figcaption
-        className={`max-w-[9.5rem] text-center font-mono text-[10.5px] leading-snug tracking-[0.04em] ${labelCls}`}
+        className={`max-w-[9.5rem] text-center font-label text-[10.5px] leading-snug tracking-[0.06em] ${labelCls}`}
       >
         {name}
       </figcaption>

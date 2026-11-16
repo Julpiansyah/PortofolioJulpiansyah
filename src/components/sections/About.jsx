@@ -66,7 +66,7 @@ export default function About() {
           {/* Paragraf editorial — kata menyala mengikuti scroll */}
           <p
             ref={ref}
-            className="font-serif text-[clamp(1.75rem,3.4vw,3.25rem)] leading-[1.18] tracking-[-0.005em] lg:col-span-8 xl:col-span-9"
+            className="font-sans text-[clamp(1.6rem,3vw,2.85rem)] font-medium leading-[1.16] tracking-[-0.02em] [font-stretch:87.5%] lg:col-span-8 xl:col-span-9"
           >
             {words.map(({ w, accent }, i) => {
               const start = i / words.length;
@@ -97,7 +97,7 @@ export default function About() {
               className="surface spotlight group rounded-2xl p-6 transition-transform duration-500 ease-out-expo hover:-translate-y-1 md:p-7"
             >
               <p className="mono-label text-accent" aria-hidden="true">0{i + 1}</p>
-              <h3 className="mt-8 font-serif text-[clamp(1.875rem,2.6vw,2.5rem)] leading-[1.05] text-fg">
+              <h3 className="mt-8 font-head text-[clamp(1.875rem,2.6vw,2.5rem)] leading-[1.05] text-fg">
                 <MaskLine delay={0.2 + i * 0.12} duration={DUR.reveal}>
                   {fact.title}
                 </MaskLine>

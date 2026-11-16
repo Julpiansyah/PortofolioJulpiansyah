@@ -59,7 +59,7 @@ function LanguageCard({ lang, index, total }) {
         {Icon ? (
           <Icon className="h-40 w-40" />
         ) : (
-          <span className="font-mono text-[120px] font-semibold leading-none">{lang.mark}</span>
+          <span className="font-display text-[130px] leading-none">{lang.mark}</span>
         )}
       </span>
 
@@ -68,11 +68,11 @@ function LanguageCard({ lang, index, total }) {
         <span className="mono-label text-muted">{String(index + 1).padStart(2, '0')}</span>
       </div>
       <p className="relative mt-8 flex items-baseline gap-3">
-        <span className="font-serif text-[34px] leading-none text-fg transition-colors duration-300 group-hover:text-accent">
+        <span className="font-head text-[30px] leading-none text-fg transition-colors duration-300 group-hover:text-accent">
           {lang.name}
         </span>
         {lang.abbr && (
-          <span className="rounded-full border border-line px-2 py-0.5 font-mono text-[11px] tracking-[0.06em] text-muted">
+          <span className="rounded-full border border-line px-2 py-0.5 font-label text-[11px] tracking-[0.06em] text-muted">
             {lang.abbr}
           </span>
         )}

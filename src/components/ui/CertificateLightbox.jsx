@@ -116,7 +116,7 @@ export default function CertificateLightbox({ cert, onClose }) {
           <p className="mono-label uppercase text-accent">
             {cert.issuer} · {cert.date}
           </p>
-          <h3 id="cert-dialog-title" className="mt-1.5 truncate font-serif text-[22px] leading-tight text-fg md:text-[30px]">
+          <h3 id="cert-dialog-title" className="mt-1.5 truncate font-head text-[22px] leading-tight text-fg md:text-[30px]">
             {cert.program}
           </h3>
         </div>
